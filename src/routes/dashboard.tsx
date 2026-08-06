@@ -53,7 +53,7 @@ function Dashboard() {
     const next = names.slice(0, Math.max(0, 10 - files.length)).map((name, i) => ({
       id: `${Date.now()}-${i}`,
       name,
-      size: SAMPLE_SIZES[i % SAMPLE_SIZES.length],
+      size: SAMPLE_SIZES[i % SAMPLE_SIZES.length] ?? "2.0 MB",
       progress: 0,
     }));
     if (!next.length) {
