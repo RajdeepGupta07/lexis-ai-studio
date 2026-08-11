@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, Check, Loader2, Lock, Mail, ShieldCheck, Sparkle } from "lucide-react";
+import { ArrowRight, Check, Loader2, Lock, Mail, Moon, ShieldCheck, Sparkle, Sun } from "lucide-react";
 import { useState } from "react";
+
+import { useTheme } from "@/components/legal/use-theme";
 
 import heroArt from "@/assets/auth-hero.jpg";
 import { Aurora, Logo } from "@/components/legal/aurora";
@@ -59,6 +61,7 @@ function GoogleMark() {
 function LoginPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const { dark, toggle } = useTheme();
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,6 +72,13 @@ function LoginPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       <Aurora />
+      <button
+        onClick={toggle}
+        aria-label="Toggle theme"
+        className="absolute right-5 top-5 z-20 grid h-10 w-10 place-items-center rounded-xl border border-border bg-secondary/40 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        {dark ? <Sun className="h-[18px] w-[18px]" /> : <Moon className="h-[18px] w-[18px]" />}
+      </button>
       <div className="relative mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 items-center gap-10 px-5 py-10 lg:grid-cols-2 lg:gap-16 lg:px-10">
         {/* Left */}
         <section className="animate-fade-up">

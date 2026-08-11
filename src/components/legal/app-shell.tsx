@@ -46,7 +46,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Progress } from "@/components/ui/progress";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { HISTORY, NOTIFICATIONS, TASKS } from "@/lib/legal-data";
 
 const NAV = [
@@ -278,6 +278,7 @@ export function AppShell({
   }, []);
 
   return (
+    <TooltipProvider delayDuration={200}>
     <div className="flex min-h-screen w-full bg-background">
       {/* Desktop sidebar */}
       <aside
@@ -421,5 +422,6 @@ export function AppShell({
         <MessageSquarePlus className="h-6 w-6" />
       </button>
     </div>
+    </TooltipProvider>
   );
 }
