@@ -1,6 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { ArrowRight, Check, Loader2, Lock, Mail, ShieldCheck, Sparkle } from "lucide-react";
+import { ArrowRight, Check, Loader2, Lock, Mail, Moon, ShieldCheck, Sparkle, Sun } from "lucide-react";
 import { useState } from "react";
+
+import { useTheme } from "@/components/legal/use-theme";
 
 import heroArt from "@/assets/auth-hero.jpg";
 import { Aurora, Logo } from "@/components/legal/aurora";
