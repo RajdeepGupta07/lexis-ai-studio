@@ -422,5 +422,6 @@ export function AppShell({
         <MessageSquarePlus className="h-6 w-6" />
       </button>
     </div>
+    </TooltipProvider>
   );
 }
